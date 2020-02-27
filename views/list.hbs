@@ -1,0 +1,35 @@
+<h1>BROKER RATINGS</h1>
+
+<a class="btn btn-primary" href="/add">Add Rating</a>
+<a class="btn btn-secondary" href="/users">My Ratings</a>
+<a class="btn btn-secondary" href="/users">Login</a>
+<br>
+
+<br>
+<br>
+<table class="table table-bordered table-hover table-sm">
+    <tr>
+    <th>Company </th> 
+    <th>Name</th>
+    <th>Load Number</th>
+    <th>Rating</th>
+    <th>Comment</th>
+    <th>Rated By</th>
+    <th>Rated Date</th>
+    </tr>
+{{#each ratings}}
+<tr> 
+<td>{{this.company.companyName}}</td>
+<td>{{this.rating.firstName}} {{this.rating.lastName}}</td>
+ <td> {{this.rating.loadNumber}} </td> 
+ <td> {{this.rating.rating}}</td>
+ <td> {{this.rating.comment}}</td>
+ <td>{{this.user.username}}</td>
+ <td>{{this.rating.createdAt}}</td>
+ <td></td>
+{{!-- <td style = "text-align: center;"> <a class="btn btn-primary" href="/edit/{{ this.id }}">Edit</a> <a class="btn btn-danger" href = "/delete/{{ this.id }}">Delete</a></td> --}}
+
+{{/each}}
+
+</table>
+
