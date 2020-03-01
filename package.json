@@ -15,7 +15,9 @@
     "pg": "^7.18.1",
     "sequelize": "^5.21.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

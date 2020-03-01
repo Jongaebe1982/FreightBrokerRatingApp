@@ -1,8 +1,9 @@
-<h1>BROKER RATINGS</h1>
+<h1>FREIGHT BROKER RATINGS</h1>
 
 <a class="btn btn-primary" href="/add">Add Rating</a>
-<a class="btn btn-secondary" href="/users">My Ratings</a>
-<a class="btn btn-secondary" href="/users">Login</a>
+{{!-- <a class="btn btn-secondary" href="/login">My Ratings</a> --}}
+<a class="btn btn-secondary" href="/login">Login</a>
+<a class="btn btn-secondary" href="/companies">Companies</a>
 <br>
 
 <br>
@@ -20,13 +21,12 @@
 {{#each ratings}}
 <tr> 
 <td>{{this.company.companyName}}</td>
-<td>{{this.rating.firstName}} {{this.rating.lastName}}</td>
- <td> {{this.rating.loadNumber}} </td> 
- <td> {{this.rating.rating}}</td>
- <td> {{this.rating.comment}}</td>
+<td>{{this.firstName}} {{this.lastName}}</td>
+ <td> {{this.loadNumber}} </td> 
+ <td> {{this.rating}}</td>
+ <td> {{this.comment}}</td>
  <td>{{this.user.username}}</td>
- <td>{{this.rating.createdAt}}</td>
- <td></td>
+ <td>{{this.createdAt}}</td>
 {{!-- <td style = "text-align: center;"> <a class="btn btn-primary" href="/edit/{{ this.id }}">Edit</a> <a class="btn btn-danger" href = "/delete/{{ this.id }}">Delete</a></td> --}}
 
 {{/each}}

@@ -3,20 +3,26 @@ const Company = require('../db').Company;
 const User = require('../db').User;
 
 exports.addRating = async (req, res) => {
-    res.render('add-edit');
+    let companies = await Company.findAll();
+    res.render('add-edit', { companies });
 };
 
-exports.listMyRatings = async (req, res) => {
-    let myRatings = await Rating.findAll({where: { userId: req.user.id }, order: [['lastName', 'ASC']] });
 
-    res.render('mylist', {myRatings});
-}
 
 exports.listRatings = async (req, res) => {
     let ratings = await Rating.findAll({include: [Company, User]});
 
     res.render('list', {ratings});
-}
+};
+
+exports.listMyRatings = async (req, res) => {
+  let myRatings = await Rating.findAll({
+    where: { userId: req.user.id },
+    order: [["lastName", "ASC"]]
+  });
+
+  res.render("mylist", { myRatings });
+};
 
 exports.updateRating = async (req, res) => {
     req.body.userId = req.user.id;

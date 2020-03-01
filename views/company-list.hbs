@@ -1,0 +1,20 @@
+<h1>COMPANY LIST</h1>
+
+<a class="btn btn-primary" href="/addcompany">Add Company</a>
+{{!-- <a class="btn btn-secondary" href="/login">My Ratings</a> --}}
+<br>
+
+<br>
+<br>
+<table class="table table-bordered table-hover table-sm">
+    <tr>
+    <th>Company Name</th> 
+    </tr>
+{{#each companies}}
+<tr> 
+<td>{{this.companyName}}</td>
+</tr>
+{{/each}}
+
+</table>
+

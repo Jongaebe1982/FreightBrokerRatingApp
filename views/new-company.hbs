@@ -1,0 +1,13 @@
+<h1> 
+Company
+</h1>
+
+<form action = "/updatecompanies" method="POST">
+Company Name: <input type = "text" name="companyName" value="{{ company.companyName }}" />
+<br>
+<input type = "hidden" name="id" value="{{ company.id }}">
+<br>
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<br>
+<a class="btn btn-secondary" href="/companies">Company List</a>
