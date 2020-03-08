@@ -1,0 +1,36 @@
+<h1>User List</h1>
+<br>
+
+<form action="/updateRoles" method="post">
+    <table class="table table-bordered table-hover table-sm">
+        <tr>
+            <th>
+                <p><u>Name</u>
+            </th>
+            <th>
+                <p><u> Role</u>
+            </th>
+        </tr>
+        {{#each users}}
+        <tr>
+            <td>{{this.username}}</td>
+
+
+            <td>
+                <select name="{{this.id}}">
+                    {{#each this.roles}}
+                    <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+        {{/each}}
+
+    </table>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<br>
+<br>
+<br>
+<a class="btn btn-primary" href="/">Rating List</a>

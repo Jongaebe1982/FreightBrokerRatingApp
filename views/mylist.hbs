@@ -1,14 +1,14 @@
-<h1>FREIGHT BROKER RATINGS</h1>
+<h1>MY FREIGHT BROKER RATINGS</h1>
 {{#if isLoggedIn}}
-<a class="btn btn-primary" href='/myratings'>My Ratings</a>
+<a class="btn btn-primary" href="/add">Add Rating</a>
+<a class="btn btn-secondary" href='/'>All Ratings</a>
 {{/if}}
-
 {{#unless isLoggedIn}}
-<a class="btn btn-primary" href="/login">Login/Register</a>
+<a class="btn btn-secondary" href="/login">Login</a>
 {{/unless}}
 <a class="btn btn-secondary" href="/companies">Companies</a>
-<a class="btn btn-secondary" href="/users">Users</a>
 <br>
+
 <br>
 <br>
 <table class="table table-bordered table-hover table-sm">
@@ -17,17 +17,23 @@
     <th>Broker's Name</th>
     <th>Rating</th>
     <th>Comment</th>
+    <th>LD Number</th>
     <th>Rated By</th>
     <th>Rated Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
     </tr>
-{{#each ratings}}
+{{#each myRatings}}
 <tr> 
 <td>{{this.company.companyName}}</td>
-<td>{{this.firstName}}</td>
+<td>{{this.firstName}} {{this.lastName}}</td>
  <td> {{this.rating}}</td>
  <td> {{this.comment}}</td>
+ <td> {{this.loadNumber}}</td>
  <td>{{this.user.username}}</td>
  <td>{{this.createdAt}}</td>
+ <td style = "text-align: center;"> <a class="btn btn-primary" href="/edit/{{ this.id }}">Edit</a> </td>
+ <td style = "text-align: center;"> <a class="btn btn-danger" href = "/delete/{{ this.id }}">Delete</a> </td>
 {{!-- <td style = "text-align: center;"> <a class="btn btn-primary" href="/edit/{{ this.id }}">Edit</a> <a class="btn btn-danger" href = "/delete/{{ this.id }}">Delete</a></td> --}}
 
 {{/each}}

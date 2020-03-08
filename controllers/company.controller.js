@@ -7,7 +7,7 @@ exports.addCompany = async (req, res) => {
 };
 
 exports.listCompanies = async (req, res) => {
-  let companies = await Company.findAll();
+  let companies = await Company.findAll( {order: [['companyName', 'ASC']]});
 
   res.render("company-list", { companies });
 };

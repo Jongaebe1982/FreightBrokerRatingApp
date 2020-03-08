@@ -28,6 +28,7 @@ sequelize.sync() //{force: true} <-- Use this to force create new tables
         { id: 0, name: 'Blocked' },
         { id: 1, name: 'User' },
         { id: 2, name: 'Admin' },
+        { id: 3, name: 'Shipper'},
     ], { updateOnDuplicate: ['name'] })
 })
 

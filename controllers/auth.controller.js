@@ -36,3 +36,6 @@ exports.isLoggedIn = (req, res, next) => {
     req.session.redirectTo = req.url;
     res.redirect('login');
 };
+
+
+

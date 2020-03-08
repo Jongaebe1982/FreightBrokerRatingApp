@@ -21,8 +21,10 @@ Broker's Last Name: <input type = "text" name="lastName" value="{{ rating.lastNa
 <br>
 Load Number: <input type = "text" name="loadNumber" value="{{ rating.loadNumber }}" />
 <br>
-Comment: <input type = "text" name="comment" value="{{ rating.comment }}" />
-<br>
+ <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comment</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="2">{{ rating.comment }}</textarea>
+  </div>
 <div class="form-group">
     <label for="exampleFormControlSelect1">Rating</label>
     <select class="form-control" name="rating" id="exampleFormControlSelect1">
