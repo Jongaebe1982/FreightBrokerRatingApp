@@ -1,8 +1,8 @@
 <h1>COMPANY LIST</h1>
-
+{{#if user.isAdmin}}
 <a class="btn btn-primary" href="/addcompany">Add Company</a>
-<a class="btn btn-secondary" href="/">All Ratings</a>
-{{!-- <a class="btn btn-secondary" href="/login">My Ratings</a> --}}
+{{/if}}
+<a class="btn btn-secondary" href="/">Home</a>
 <br>
 
 <br>
@@ -10,13 +10,18 @@
 <table class="table table-bordered table-hover table-sm">
     <tr>
     <th>Company Name</th> 
+{{#if user.isAdmin}}
+    <th>Edit</th>
+    <th>Delete</th>
+{{/if}}
     </tr>
 {{#each companies}}
 <tr> 
 <td>{{this.companyName}}</td>
+<td style = "text-align: center;"> <a class="btn btn-primary" href="/editcompanies/{{ this.id }}">Edit</a> </td>
+<td style = "text-align: center;"> <a class="btn btn-danger" href = "/deletecompanies/{{ this.id }}">Delete</a> </td>
 </tr>
 {{/each}}
-
 </table>
 
 

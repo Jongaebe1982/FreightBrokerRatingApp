@@ -8,12 +8,11 @@ exports.addCompany = async (req, res) => {
 
 exports.listCompanies = async (req, res) => {
   let companies = await Company.findAll( {order: [['companyName', 'ASC']]});
-
-  res.render("company-list", { companies });
+  
+  res.render("company-list", { companies, user:req.user });
 };
 
 exports.updateCompany = async (req, res) => {
-  console.log(req.body);
   // req.body.userId = req.user.id;
   await Company.upsert(req.body);
   res.redirect("/companies");
@@ -26,7 +25,7 @@ exports.deleteCompany = async (req, res) => {
 };
 exports.editCompany = async (req, res) => {
   let id = req.params.id;
-  let student = await Company.findByPk(id);
+  let company = await Company.findByPk(id);
 
-  res.render("add-edit", { company });
+  res.render("new-company", { company });
 };

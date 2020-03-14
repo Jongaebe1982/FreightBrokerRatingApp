@@ -17,6 +17,8 @@ router.get('/add', ratingController.addRating);
 router.get('/companies', companyController.listCompanies);
 router.get('/addcompany', authorizeRole([2]), companyController.addCompany);
 router.post('/updatecompanies', authorizeRole([2]), companyController.updateCompany);
+router.get("/editcompanies/:id", companyController.editCompany);
+router.get("/deletecompanies/:id", companyController.deleteCompany);
 router.get("/users", adminController.listUsers);
 router.post("/updateRoles", authorizeRole([2]), adminController.updateRoles);
 router.post('/update', ratingController.updateRating);
