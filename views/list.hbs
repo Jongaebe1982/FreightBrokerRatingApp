@@ -8,7 +8,9 @@
 <a class="btn btn-primary" href="/login">Login/Register</a>
 {{/unless}}
 <a class="btn btn-secondary" href="/companies">Companies</a>
+{{#if user.isAdmin}}
 <a class="btn btn-secondary" href="/users">Users</a>
+{{/#if}}
 <br>
 <br>
 <br>

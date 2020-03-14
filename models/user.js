@@ -14,7 +14,7 @@ module.exports = (sequelize, Sequelize) => {
       salt: Sequelize.TEXT,
       roleId: {
         type: Sequelize.INTEGER,
-        defaultValue: 2
+        defaultValue: 1
       }
     },
     {
