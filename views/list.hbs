@@ -8,9 +8,8 @@
 <a class="btn btn-primary" href="/login">Login/Register</a>
 {{/unless}}
 <a class="btn btn-secondary" href="/companies">Companies</a>
-{{#if user.isAdmin}}
 <a class="btn btn-secondary" href="/users">Users</a>
-{{/if}}
+
 <br>
 <br>
 <br>
@@ -31,7 +30,6 @@
  <td> {{this.comment}}</td>
  <td>{{this.user.username}}</td>
  <td>{{this.createdAt}}</td>
-{{!-- <td style = "text-align: center;"> <a class="btn btn-primary" href="/edit/{{ this.id }}">Edit</a> <a class="btn btn-danger" href = "/delete/{{ this.id }}">Delete</a></td> --}}
 
 {{/each}}
 
